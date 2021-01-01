@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>proyek sysprog</title>
+</head>
+<body>
+    <div class="center">
+        <h1>proyek sysprog</h1>
+    
+        <div class="circle">
+            <div class="small"></div>
+            <div class="big"></div>
+        </div>
+
+        <div class="form">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <br>
+                <button type="submit" class="button-dark" id="submit">Simpan</button>
+            </form>
+        </div>
+        <a href="{{redirect_page}}" class="button-light">Kembali</a>
+    </div>
+</body>
+</html>

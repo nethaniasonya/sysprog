@@ -1,0 +1,153 @@
+body {
+    background-color: #F4F5F7;
+    font-family: 'Poppins', sans-serif;
+}
+
+.center {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+h1 {
+    font-size: 10vh;
+    color: #5A86AD;
+    margin: auto;
+}
+
+.circle {
+    display: flex;
+    align-items: center;
+    margin-top: -2.5vh;
+}
+
+.small {
+    border-radius: 50%;
+    height: 2.5vh;
+    width: 2.5vh;
+    background-color: #5A86AD;
+    margin: auto;
+    margin-right: 2px;
+}
+
+.big {
+    border-radius: 50%;
+    height: 4vh;
+    width: 4vh;
+    background-color: #5A86AD;
+    margin: auto;
+    margin-left: 2px;
+}
+
+th, td {
+    padding: 0.6em;
+}
+
+.round-table {
+    border-collapse: separate;
+    border-spacing: 10px 0px;
+    margin: 4vh auto;
+    color: #0A4153;
+}
+
+.round-table th {
+    padding: 10px;
+    background: #D4ECF9;
+    border-radius: 15px;
+}
+
+.round-table tbody {
+    padding: 10px;
+    background: #D4ECF9;
+}
+
+.round-table tbody tr:first-child td {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+  
+.round-table tbody tr:last-child td {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.separator {
+    background: #F4F5F7;
+    height: 7px;
+}
+
+.row:hover {
+    background-color: #B8E2F2;
+    cursor: pointer;
+}
+
+.button-dark, .button-light:hover {
+    background-color: #5A86AD;
+    color: white;
+    text-decoration: none;
+    padding: 0.6em 1em;
+    border-radius: 30px;
+    border: none;
+}
+
+.button-light, .button-dark:hover {
+    background-color: white;
+    color: #5A86AD;
+    border: 2px solid #5A86AD;
+    text-decoration: none;
+    padding: 0.6em 1em;
+    border-radius: 30px;
+}
+
+.form {
+    background-color: white;
+    border: 1px solid #0A4153;
+    border-radius: 20px;
+    color: #0A4153;
+    text-align: left;
+    padding: 1em;
+    margin: 1.5em auto;
+    width: 25vw;
+}
+
+.form label {
+    display: block;
+    font-weight: bold;
+}
+
+.form input {
+    width: 100%;
+    font-size: .9em;
+    color: #0A4153;
+    margin: 0.3em 0 1em 0;
+    border: none;
+    background: none;
+    border-bottom: 1px solid #0A4153;
+    padding: 0.5em 0.1em;
+}
+
+.tanggal {
+    background-color: #D4ECF9;
+    width: 15em;
+    font-weight: bold;
+    color: #0A4153;
+    border-radius: 15px;
+    padding: 0.5em;
+    margin: auto;
+    margin-top: 1em;
+}
+
+.data {
+    background-color: #D4ECF9;
+    width: 15em;
+    color: #0A4153;
+    border-radius: 15px;
+    padding: 0.01em;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.warning {
+    font-size: small;
+    width: 25vw;
+}
