@@ -17,6 +17,8 @@
             <div class="big"></div>
         </div>
     
+        {% if adausb %}
+
         <table class="round-table">
             <div class="header">
                 <tr>
@@ -47,8 +49,17 @@
                 </tr>
             </tbody>
         </table>
-    
+
         <a href="/tambah" class="button-dark" id="tambah">Tambahkan Partisi</a>
+        
+        {% endif %}
+
+        {% if not adausb %}
+
+        <h2>Halo! Silakan masukkan USB dan reload page ini.</h2>
+
+        {% endif %}
+    
     </div>
 
 </body>
