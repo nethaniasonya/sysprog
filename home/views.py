@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 import os
+from  django.http import HttpResponseRedirect
 
 s = os.system
 
@@ -7,13 +8,17 @@ s = os.system
 def index(request):
 	res = get_table()
 
+
 	context = {
-		"result": res,
+		"result": res
 	}
+
 	return render(request, 'index.html', context)
 
-def detail(request):
-    return render(request, 'detail.html')
+def detail(request,id):
+	res = get_table()
+	context ={ "result":res[int(id)] }
+	return render(request, 'detail.html', context)
 
 # def detail(request, id):
 #     berat = Entry.objects.get(id=id)
@@ -43,17 +48,29 @@ def get_table():
 		for line in f:
 			print(line)
 			if (line == "No USB detected\n"):
-				return # Show Landing Page
+				return False
 			result.append(line.split())
+			print("ada usb")
 
 
 
-		device_size = result[len(result) - 1][3]
+		device_size = result[len(result) - 2][3]
 		for line in result:
 			if ("primary" not in line):
 				result.remove(line)
-			result[result.index(line)] = [result[0], result[3]]
+			continue
+			result[result.index(line)] = [line[0], line[3]]
+		return result
 
+def add(request):
+	if request.method == "POST":
+		size = request.POST.get('size', False)
+		make_part(size)
+	return render(request, 'tambah.html')
+
+def hapus(request, id):
+	delete(id)
+	return redirect('/')
 # Function to make partition
 # Max partition that USB drive can hold are 4
 # size parameter can be filled with [0-9]*[K|M|G]*B

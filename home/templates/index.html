@@ -17,15 +17,17 @@
             <div class="big"></div>
         </div>
     
-        {% if adausb %}
+        {% if result %}
 
         <table class="round-table">
             <div class="header">
                 <tr>
-                    <th>Partisi</th>
-                    <th>File System</th>
-                    <th>Ukuran</th>
-                    <th>Label</th>
+                    <th>Number</th>
+			<th>Start</th>
+	          	<th>End</th>
+                    <th>Size</th>
+		    <th>Type</th>
+		    <th>File System</th>
                 </tr>
             </div>
             <tr class="separator">
@@ -35,18 +37,14 @@
                 <td></td>
             </tr>
             <tbody>
-                <tr class="row" onclick="location.href='/detail/{{entry.id}}';">
-                    <td>detail 1</td>
-                    <td>detail 2</td>
-                    <td>detail 3</td>
-                    <td>detail 4</td>
+                
+		{% for i in result %}
+		<tr class="row" onclick="location.href='detail/{{i.0}}';">				
+                    {% for j in i %}
+		   	 <td>{{ j }}</td>
+                    {% endfor %}
                 </tr>
-                <tr class="row" onclick="location.href='/detail/{{entry.id}}';">
-                    <td>detail 1</td>
-                    <td>detail 2</td>
-                    <td>detail 3</td>
-                    <td>detail 4</td>
-                </tr>
+		{% endfor %}
             </tbody>
         </table>
 
@@ -54,7 +52,7 @@
         
         {% endif %}
 
-        {% if not adausb %}
+        {% if not result %}
 
         <h2>Halo! Silakan masukkan USB dan reload page ini.</h2>
 

@@ -18,12 +18,13 @@
         <div class="form">
             <form method="POST">
                 {% csrf_token %}
-                {{ form }}
+		<label for="size">Size</label>
+                <input name="size" type="text"></input>
                 <br>
                 <button type="submit" class="button-dark" id="submit">Simpan</button>
             </form>
         </div>
-        <a href="{{redirect_page}}" class="button-light">Kembali</a>
+        <a href="/" class="button-light">Kembali</a>
     </div>
 </body>
 </html>

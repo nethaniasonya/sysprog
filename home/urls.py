@@ -5,7 +5,7 @@ app_name = 'app'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('detail/', views.detail, name='detail'),
-    # path('hapus/', views.hapus, name='hapus'),
-    # path('tambah', views.add, name='add')
+    path('detail/<id>/', views.detail, name='detail'),
+    path('hapus/<id>', views.hapus, name='hapus'),
+    path('tambah', views.add, name='add')
 ]

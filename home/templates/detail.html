@@ -16,20 +16,26 @@
         </div>
     
         <div class="tanggal">
-            nama partisinya apa
+           
         </div>
     
         <div class="data">
-            <p><strong>detail</strong></p>
-            <p>detail 1</p>
-            <p><strong>detail</strong></p>
-            <p>detail 2</p>
-            <p><strong>detail</strong></p>
-            <p>detail 3</p>
+            <p><strong>Number</strong></p>
+            <p>{{result.0}}</p>
+            <p><strong>Start</strong></p>
+            <p>{{result.1}}</p>
+            <p><strong>End</strong></p>
+            <p>{{result.2}}</p>
+	    <p><strong>Size</strong></p>
+	    <p>{{result.3}}</p>
+		<p><strong>Type</strong></p>
+		<p>{{result.4}}</p>
+		<p><strong>File System</strong></p>
+		<p>{{result.5}}</p>
         </div>
     
         <a href="/" class="button-light">Kembali</a>
-        <a href="/hapus/{{data.id}}" class="button-dark" id="hapus">Hapus</a>
+        <a href="/hapus/{{result.0}}" class="button-dark" id="hapus">Hapus</a>
     </div>
 </body>
 </html>
