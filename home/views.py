@@ -7,8 +7,8 @@ s = os.system
 def index(request):
 	res = get_table()
 
-	context ={
-		"result": result
+	context = {
+		"result": res,
 	}
 	return render(request, 'index.html', context)
 
@@ -40,13 +40,13 @@ def get_table():
 	s('./partition.sh 1 > temp')
 	with open('temp', 'r') as f:
 		result = []
-		count = 0
 		for line in f:
-			result[count] = f.split()
-			count += 1
+			print(line)
+			if (line == "No USB detected\n"):
+				return # Show Landing Page
+			result.append(line.split())
 
-		if (result == "No USB detected"):
-			return # Show Landing Page
+
 
 		device_size = result[len(result) - 1][3]
 		for line in result:
