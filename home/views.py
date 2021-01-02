@@ -5,7 +5,12 @@ s = os.system
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+	res = get_table()
+
+	context ={
+		"result": result
+	}
+	return render(request, 'index.html', context)
 
 def detail(request):
     return render(request, 'detail.html')
@@ -34,6 +39,7 @@ def detail(request):
 def get_table():
 	s('./partition.sh 1 > temp')
 	with open('temp', 'r') as f:
+		result = []
 		count = 0
 		for line in f:
 			result[count] = f.split()

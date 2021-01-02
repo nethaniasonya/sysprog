@@ -1,6 +1,0 @@
-Number  Start   End     Size     Type     File system  Flags
-        0.00B   511B    512B              Free Space
- 1      512B    10.0MB  10000kB  primary
-        10.0MB  10.5MB  485kB             Free Space
- 2      10.5MB  19.9MB  9437kB   primary
-        19.9MB  31.4GB  31.4GB            Free Space
