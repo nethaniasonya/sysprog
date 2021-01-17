@@ -96,6 +96,11 @@ function make_part {
 	part_start=$(last_part_end)
 	part_end=$(get_end $part_start $1)
 	parted --script $dev mkpart primary ntfs $part_start $part_end
+	get_last
+	last=$?
+	mkfs -t ntfs /dev/sdb$last
+	mkdir -p /mnt/sdb$last
+	mount -t auto /dev/sdb$last /mnt/sdb$last
 }
 
 function rm_part {
