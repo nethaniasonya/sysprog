@@ -42,7 +42,8 @@ def detail(request,id):
 # With part_no, start_memory, end_memory, size, partition_type, file_system, flag
 # In this function, result only have part_no and size
 def get_table():
-	s('./partition.sh 1 > temp')
+	var1=s('./partition.sh 1 > temp')
+	print(var1)
 	with open('temp', 'r') as f:
 		result = []
 		for line in f:
@@ -50,7 +51,6 @@ def get_table():
 			if (line == "No USB detected\n"):
 				return False
 			result.append(line.split())
-			print("ada usb")
 
 
 
@@ -83,4 +83,4 @@ def make_part(size):
 # Parameted used are the part_no
 # Try to mitigate any error that can be cause in JS file
 def delete(partition):
-	s('.partition 3.sh ' + partition)
+	s('./partition.sh 3 ' + partition)
